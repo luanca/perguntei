@@ -1,0 +1,27 @@
+/* Adaptado por Luan Carvalho */
+/* Fontes desenhadas por Pooja Saxena */
+
+@font-face {
+    font-family: Cambay;
+    font-weight: 400;
+    font-style: italic;
+    src: url(Cambay-Italic.ttf);
+}
+@font-face {
+    font-family: Cambay;
+    font-weight: 400;
+    font-style: normal;
+    src: url(Cambay-Regular.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    font-weight: 700;
+    font-style: italic;
+    src: url(Cambay-BoldItalic.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    font-weight: 700;
+    font-style: normal;
+    src: url(Cambay-Bold.ttf);
+}

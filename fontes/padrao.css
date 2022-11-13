@@ -1,0 +1,45 @@
+/* Criado por Luan Carvalho em 13.11.2022 às 02:15 */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: dimgray;
+  color: #fff;
+}
+
+.titulo {
+  display: grid;
+  grid-template-areas: 'titulo';
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-content: center;
+  justify-content: center;
+}
+
+.titulo div {
+  grid-area: titulo;
+  font-size: 18vmin;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  text-shadow: 0 0 1px dimgray;
+}
+
+.decoracao {
+  font-family: Cambay, sans-serif;
+  position: fixed;
+  top: 50vh;
+  left: 40vw;
+  font-size: 180vmin;
+  line-height: 0.2em;
+  letter-spacing: 0px;
+  transform: rotate(10deg);
+  color: rgba(255, 255, 255, 0.2);
+}
