@@ -4,16 +4,18 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
 }
 
 body {
-  background-color: dimgray;
+  background-color: #101010;
   color: #fff;
 }
 
-.titulo {
+.telaInicial {
   display: grid;
-  grid-template-areas: 'titulo';
+  grid-template-areas: 'titulo' 'msgRodape';
+  grid-template-rows: 90% 10%;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -21,15 +23,36 @@ body {
   left: 0;
   align-content: center;
   justify-content: center;
+  align-items: center;
 }
 
-.titulo div {
+.telaInicial .titulo {
   grid-area: titulo;
   font-size: 18vmin;
   font-family: Poppins, sans-serif;
   font-weight: 600;
   letter-spacing: -0.06em;
   text-shadow: 0 0 1px dimgray;
+  text-align: center;
+  line-height: 0.8em;
+}
+
+.telaInicial .titulo span{
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  line-height: 1em;
+  font-family: Montserrat, sans-serif;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.telaInicial .msgRodape{
+  grid-area: msgRodape;
+  align-items: baseline;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 100;
 }
 
 .decoracao {

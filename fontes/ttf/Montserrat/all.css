@@ -1,0 +1,13 @@
+/* Adaptado por Luan Carvalho */
+/* Fontes desenhadas por Pooja Saxena */
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    src: url(Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    src: url(Montserrat-Italic-VariableFont_wght.ttf);
+}
