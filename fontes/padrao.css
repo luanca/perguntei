@@ -1,5 +1,7 @@
 /* Criado por Luan Carvalho em 13.11.2022 às 02:15 */
 
+
+/* Para o projeto geral */
 * {
   padding: 0;
   margin: 0;
@@ -11,6 +13,32 @@ body {
   background-color: #101010;
   color: #fff;
 }
+
+.identGeralLogo {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+
+input {
+  background-color: #303030;
+  border: 1px solid transparent;
+  color: #fff;
+  padding: 3px;
+  outline: 0px none transparent;
+  height: 2em;
+  font-family: Montserrat, sans-serif;
+}
+
+input:active, input:focus {
+  outline: 1px solid #aaa;
+}
+
+input.btDestaque {
+  font-weight: bold;
+}
+
+/* TELA: Inicio */
 
 .telaInicial {
   display: grid;
@@ -37,7 +65,7 @@ body {
   line-height: 0.8em;
 }
 
-.telaInicial .titulo span{
+.telaInicial .titulo span {
   display: inline-block;
   width: 100%;
   font-size: 20px;
@@ -47,7 +75,7 @@ body {
   font-weight: 400;
 }
 
-.telaInicial .msgRodape{
+.telaInicial .msgRodape {
   grid-area: msgRodape;
   align-items: baseline;
   text-align: center;
@@ -65,4 +93,80 @@ body {
   letter-spacing: 0px;
   transform: rotate(10deg);
   color: rgba(255, 255, 255, 0.2);
+  z-index: -999;
+}
+
+/* TELA: Apresentação e nome do usuário */
+
+.apresentacao {
+  display: none;
+  grid-template-areas: 'topo topo' 'esq dir';
+  grid-template-rows: min-content auto;
+  grid-template-columns: 40% 60%;
+}
+
+.apresentacao .le {
+  grid-area: esq;
+}
+.apresentacao .logo {
+  grid-area: topo;
+  font-size: 7.7vmin;
+  padding: 5px;
+  display: inline-block;
+}
+.apresentacao .le .txtApresentacao {
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+}
+.apresentacao .le .txtApresentacao p {
+  margin-bottom: 7px;
+}
+
+.apresentacao .ld {
+  grid-area: dir;
+  padding: 8px 3px;
+}
+
+.apresentacao .ld label {
+  display: inline-block;
+  width: 100%;
+}
+
+.apresentacao .ld input[type=text] {
+  width: 100%;
+  max-width: 400px;
+  margin: 3px 0px;
+}
+
+.apresentacao .ld .listaJogadores {
+  display: inline-block;
+  width: 100%;
+  padding-top: 10px;
+  white-space: nowrap;
+}
+
+.apresentacao .ld .listaJogadores .jogN {
+  display: inline-block;
+  width: 50%;
+  height: 1.5em;
+  word-wrap: normal;
+  overflow: hidden;
+  margin: 0;
+}
+.apresentacao .ld .listaJogadores .jogR {
+  display: inline-block;
+  width: 25%;
+  height: 1.5em;
+  word-wrap: normal;
+  overflow: hidden;
+  margin: 0;
+}
+.apresentacao .ld .listaJogadores .jogA {
+  display: inline-block;
+  width: 25%;
+  height: 1.5em;
+  word-wrap: normal;
+  overflow: hidden;
+  margin: 0;
 }

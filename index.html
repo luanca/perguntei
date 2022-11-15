@@ -8,19 +8,42 @@
   <meta name="theme-color" content="#015023" />
   <meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, user-scalable=yes" />
   <meta charset="UTF-8" />
-  <title>Perguntei!</title>
+  <title>SabeTudo!</title>
   <link rel="stylesheet" href="fontes/ttf/Poppins/all.css">
   <link rel="stylesheet" href="fontes/ttf/Cambay/all.css">
   <link rel="stylesheet" href="fontes/ttf/Montserrat/all.css">
   <link rel="stylesheet" href="fontes/padrao.css">
 </head>
 
-<body estado="inicio">
+<body>
   <span class="decoracao">?</span>
   <div class="telaInicial">
-    <div class="titulo">Perguntei!<br /><span>Bem-vindo!</span></div>
+    <div class="titulo">SabeTudo!<br /><span id="msgCarregamento">Bem-vindo!</span></div>
     <div class="msgRodape">© Luan Carvalho</div>
   </div>
+  <div class="apresentacao">
+    <h1 class="logo identGeralLogo">SabeTudo!</h1>
+    <div class="le">
+      <div class="txtApresentacao">
+        <p>Seja bem-vindo!</p>
+        <p>Este é um jogo de perguntas e respostas bíblicas. Para cada pergunta, são quatro respostas. É só escolher a resposta correta!</p>
+      </div>
+    </div>
+    <div class="ld">
+      <div class="insereNome">
+        <label>Jogador</label>
+        <input type="text" value="" placeholder="Digite seu nome aqui" name="insNomeUsuario" />&nbsp;<input type="button" value="Mais um jogador" name="btAdcusuario" />&nbsp;<input type="button" value="Começar" name="btComecarJogo" class="btDestaque" />
+      </div>
+      <div class="listaJogadores">
+        <span class="jogN">Jogador 1</span>
+        <span class="jogR">Renomear</span>
+        <span class="jogA">Apagar</span><br />
+        <span class="jogN">Jogador 2</span>
+        <span class="jogR">Renomear</span>
+        <span class="jogA">Apagar</span><br />
+      </div>
+    </div>
+  </div>
+  <script src="fontes/padrao.js"></script>
 </body>
-
 </html>
