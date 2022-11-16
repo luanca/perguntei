@@ -31,18 +31,22 @@
     </div>
     <div class="ld">
       <div class="insereNome">
+        <form name="insereNome" action="javascript:adicUsuario();">
         <label>Jogador</label>
-        <input type="text" value="" placeholder="Digite seu nome aqui" name="insNomeUsuario" />&nbsp;<input type="button" value="Mais um jogador" name="btAdcusuario" />&nbsp;<input type="button" value="Começar" name="btComecarJogo" class="btDestaque" />
+        <input type="text" value="" placeholder="Digite aqui" name="insNomeUsuario" autocomplete="off" />&nbsp;<input type="button" value="Mais um jogador" name="btAdcusuario" onclick="adicUsuario();" renomearUsuario="0" indiceUsuarioRenomear="0" />&nbsp;<input type="button" value="Começar" name="btComecarJogo" class="btDestaque" formaction="javascript:;" onclick="javascript:iniciarJogo();" /></form>
       </div>
-      <div class="listaJogadores">
-        <span class="jogN">Jogador 1</span>
-        <span class="jogR">Renomear</span>
-        <span class="jogA">Apagar</span><br />
-        <span class="jogN">Jogador 2</span>
-        <span class="jogR">Renomear</span>
-        <span class="jogA">Apagar</span><br />
+      <div class="listaJogadores" id="listaJogadores">
       </div>
     </div>
+  </div>
+  <div class="perguntas">
+    <div class="logo identGeralLogo">SabeTudo!</div>
+    <div class="le">
+      <div class="dirPergunta">Pergunta para <span>Você</span></div>
+      <div class="ajudaPergunta">Texto base: Marcos 30:30</div>
+      <div class="btsPergunta"><input type="button" value="Finalizar jogo agora" id="finJogo" /></div>
+    </div>
+    <div class="ld"></div>
   </div>
   <script src="fontes/padrao.js"></script>
 </body>

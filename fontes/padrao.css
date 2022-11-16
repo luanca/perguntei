@@ -1,7 +1,27 @@
 /* Criado por Luan Carvalho em 13.11.2022 às 02:15 */
+/* Arquivo CSS principal */
 
 
 /* Para o projeto geral */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fff transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -30,7 +50,8 @@ input {
   font-family: Montserrat, sans-serif;
 }
 
-input:active, input:focus {
+input:active,
+input:focus {
   outline: 1px solid #aaa;
 }
 
@@ -94,6 +115,7 @@ input.btDestaque {
   transform: rotate(10deg);
   color: rgba(255, 255, 255, 0.2);
   z-index: -999;
+  user-select: none;
 }
 
 /* TELA: Apresentação e nome do usuário */
@@ -103,22 +125,30 @@ input.btDestaque {
   grid-template-areas: 'topo topo' 'esq dir';
   grid-template-rows: min-content auto;
   grid-template-columns: 40% 60%;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .apresentacao .le {
   grid-area: esq;
+  overflow: auto;
+  max-height: 100%;
+  display: inline-block;
 }
+
 .apresentacao .logo {
   grid-area: topo;
   font-size: 7.7vmin;
   padding: 5px;
   display: inline-block;
 }
+
 .apresentacao .le .txtApresentacao {
   display: inline-block;
   width: 100%;
   padding: 5px;
 }
+
 .apresentacao .le .txtApresentacao p {
   margin-bottom: 7px;
 }
@@ -126,6 +156,9 @@ input.btDestaque {
 .apresentacao .ld {
   grid-area: dir;
   padding: 8px 3px;
+  overflow: auto;
+  max-height: 100%;
+  display: inline-block;
 }
 
 .apresentacao .ld label {
@@ -143,30 +176,80 @@ input.btDestaque {
   display: inline-block;
   width: 100%;
   padding-top: 10px;
-  white-space: nowrap;
 }
 
 .apresentacao .ld .listaJogadores .jogN {
   display: inline-block;
-  width: 50%;
-  height: 1.5em;
-  word-wrap: normal;
-  overflow: hidden;
-  margin: 0;
+  width: 100%;
+  padding-left: 10px;
+  text-indent: -10px;
+  margin-bottom: 7px;
 }
-.apresentacao .ld .listaJogadores .jogR {
-  display: inline-block;
-  width: 25%;
-  height: 1.5em;
-  word-wrap: normal;
-  overflow: hidden;
-  margin: 0;
+
+.apresentacao .ld .listaJogadores .jogO {
+  display: none;
+  margin-left: 15px;
+  font-size: 0.85em;
 }
+
+.apresentacao .ld .listaJogadores .jogN:hover .jogO {
+  display: inline;
+}
+
+.apresentacao .ld .listaJogadores .jogR:link,
+.apresentacao .ld .listaJogadores .jogA:link,
+.apresentacao .ld .listaJogadores .jogR,
 .apresentacao .ld .listaJogadores .jogA {
-  display: inline-block;
-  width: 25%;
-  height: 1.5em;
-  word-wrap: normal;
+  display: inline;
+  text-decoration: none;
+  color: inherit;
+}
+
+.apresentacao .ld .listaJogadores .jogR:hover,
+.apresentacao .ld .listaJogadores .jogA:hover {
+  text-decoration: underline;
+}
+
+/* TELA: Perguntas */
+
+.perguntas {
+  display: none;
+  grid-template-areas: 'topo topo' 'esq dir';
+  grid-template-rows: min-content auto;
+  grid-template-columns: 40% 60%;
   overflow: hidden;
-  margin: 0;
+  height: 100vh;
+}
+
+.perguntas .le {
+  grid-area: esq;
+  overflow: auto;
+  max-height: 100%;
+  display: inline-block;
+  padding: 0px 5px;
+}
+
+.perguntas .le div {
+  padding-bottom: 6px;
+  border-bottom: 1px solid #666;
+  margin-top: 6px;
+}
+
+.perguntas .le div:last-of-type {
+  border-bottom: 0px solid transparent;
+}
+
+.perguntas .logo {
+  grid-area: topo;
+  font-size: 7.7vmin;
+  padding: 5px;
+  display: inline-block;
+}
+
+.perguntas .ld {
+  grid-area: dir;
+  padding: 8px 3px;
+  overflow: auto;
+  max-height: 100%;
+  display: inline-block;
 }
