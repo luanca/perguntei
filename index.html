@@ -26,14 +26,20 @@
     <div class="le">
       <div class="txtApresentacao">
         <p>Seja bem-vindo!</p>
-        <p>Este é um jogo de perguntas e respostas bíblicas. Para cada pergunta, são quatro respostas. É só escolher a resposta correta!</p>
+        <p>Este é um jogo de perguntas e respostas bíblicas. Para cada pergunta, são quatro respostas. É só escolher a
+          resposta correta!</p>
       </div>
     </div>
     <div class="ld">
       <div class="insereNome">
         <form name="insereNome" action="javascript:adicUsuario();">
-        <label>Jogador</label>
-        <input type="text" value="" placeholder="Digite aqui" name="insNomeUsuario" autocomplete="off" />&nbsp;<input type="button" value="Mais um jogador" name="btAdcusuario" onclick="adicUsuario();" renomearUsuario="0" indiceUsuarioRenomear="0" />&nbsp;<input type="button" value="Começar" name="btComecarJogo" class="btDestaque" formaction="javascript:;" onclick="javascript:iniciarJogo();" /></form>
+          <label>Jogador</label>
+          <input type="text" value="" placeholder="Digite aqui" name="insNomeUsuario" autocomplete="off" />&nbsp;
+          <input type="button" value="Mais um jogador" name="btAdcusuario" onclick="adicUsuario();" renomearUsuario="0"
+            indiceUsuarioRenomear="0" />&nbsp;
+          <input type="button" value="Começar" name="btComecarJogo" class="btDestaque" formaction="javascript:;"
+            onclick="javascript:iniciarJogo();" />
+        </form>
       </div>
       <div class="listaJogadores" id="listaJogadores">
       </div>
@@ -43,11 +49,22 @@
     <div class="logo identGeralLogo">SabeTudo!</div>
     <div class="le">
       <div class="dirPergunta">Pergunta para <span>Você</span></div>
-      <div class="ajudaPergunta">Texto base: Marcos 30:30</div>
+      <div class="ajudaPergunta">Texto base: <span id="txtAjudaPergunta">Marcos 30:30</span></div>
       <div class="btsPergunta"><input type="button" value="Finalizar jogo agora" id="finJogo" /></div>
     </div>
-    <div class="ld"></div>
+    <div class="ld">
+      <h2 class="strPergunta" id="strPergunta"></h2>
+      <ul class="alts">
+        <li class="altResposta" resp="0" tabindex="0" id="altResp1"></li>
+        <li class="altResposta" resp="0" tabindex="0" id="altResp2"></li>
+        <li class="altResposta" resp="0" tabindex="0" id="altResp3"></li>
+        <li class="altResposta" resp="0" tabindex="0" id="altResp4"></li>
+      </ul>
+      <div class="faixaOpcoes"><input type="button" value="Próxima pergunta" /></div>
+    </div>
   </div>
+  <script src="fontes/perguntas.js"></script>
   <script src="fontes/padrao.js"></script>
 </body>
+
 </html>

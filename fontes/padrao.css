@@ -248,8 +248,41 @@ input.btDestaque {
 
 .perguntas .ld {
   grid-area: dir;
-  padding: 8px 3px;
+  padding: 8px 5px;
   overflow: auto;
   max-height: 100%;
   display: inline-block;
+}
+
+.perguntas .ld .strPergunta {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.perguntas .ld .altResposta {
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  padding-left: 30px;
+  text-indent: -15px;
+  margin-bottom: 7px;
+}
+
+.perguntas .ld .alts {
+  display: inline-block;
+  list-style: none;
+  width: 100%;
+}
+
+.perguntas .ld .altResposta::before {
+  content: '›';
+  width: 5px;
+  overflow: hidden;
+  margin-right: 3px;
+}
+
+.perguntas .ld .faixaOpcoes {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
 }

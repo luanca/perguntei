@@ -6,6 +6,7 @@ document.getElementById("msgCarregamento").innerHTML = "Carregando ...";
 
 // Definições gerais
 var usuarios = [];
+var perguntas = [];
 
 function adicUsuario() {
   // Adicionar o usuário inserido na lista de jogadores
@@ -104,6 +105,45 @@ function iniciarJogo() {
   }
   document.getElementsByClassName("apresentacao")[0].style.display = "none";
   document.getElementsByClassName("perguntas")[0].style.display = "grid";
+  prepararPerguntas();
+  escoherPerguntas();
+}
+
+function prepararPerguntas(){
+  // Preparar perguntas em uma array separada da array original
+  perguntas = [];
+  perguntasArrays.forEach(pergAtual => {
+    perguntas.push(pergAtual);
+  });
+}
+
+function escoherPerguntas() {
+  // Sortear uma pergunta e exibir na tela
+  var vep1 = perguntas.length;
+  var vep2 = obterInteiroAleatorio(0, (vep1 - 1));
+  var vep3 = [1, 2, 3, 4];
+  var vep4 = 1;
+  document.getElementById("altResp1").setAttribute("resp", "0");
+  document.getElementById("altResp2").setAttribute("resp", "0");
+  document.getElementById("altResp3").setAttribute("resp", "0");
+  document.getElementById("altResp3").setAttribute("resp", "0");
+  document.getElementById("strPergunta").innerText = perguntas[vep2]["pergunta"];
+  document.getElementById("txtAjudaPergunta").innerText = perguntas[vep2]["textoBase"];
+  while(vep3.length > 0){
+    var vep5 = obterInteiroAleatorio(0, (vep3.length - 1));
+    if(vep4 == 1){
+      document.getElementById("altResp" + String(vep3[vep5])).setAttribute("resp", "1");
+    }
+    document.getElementById("altResp" + String(vep3[vep5])).innerText = perguntas[vep2]["resposta"+String(vep4)];
+    vep4++;
+    vep3.splice(vep5, 1);
+  }
+  perguntas.splice(vep2, 1);
+}
+
+function obterInteiroAleatorio(minimo, maximo) {
+  // Sortear um número aleatório com os parametros informado
+  return Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
 }
 
 function aposCarregamento() {
