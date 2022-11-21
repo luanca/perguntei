@@ -230,13 +230,8 @@ input.btDestaque {
 }
 
 .perguntas .le div {
-  padding-bottom: 6px;
-  border-bottom: 1px solid #666;
+  padding-bottom: 10px;
   margin-top: 6px;
-}
-
-.perguntas .le div:last-of-type {
-  border-bottom: 0px solid transparent;
 }
 
 .perguntas .logo {

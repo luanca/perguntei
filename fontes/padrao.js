@@ -5,8 +5,9 @@
 document.getElementById("msgCarregamento").innerHTML = "Carregando ...";
 
 // Definições gerais
-var usuarios = [];
-var perguntas = [];
+var usuarios = []; // Array de todos os usuários inseridos no jogo
+var perguntas = []; // Array de todas as perguntas do jogo
+var rodada = 0; // Int do número de rodadas que está sendo jogada
 
 function adicUsuario() {
   // Adicionar o usuário inserido na lista de jogadores
@@ -14,7 +15,7 @@ function adicUsuario() {
   if (Number(document.forms["insereNome"]["btAdcusuario"].getAttribute("renomearUsuario")) == 0) {
     if (vau1 !== "") {
       usuarios.push(
-        { "Nome": vau1, perguntasRespondidas: 0, respostasCertas: 0 }
+        { "Nome": vau1, perguntasRespondidas: 0, respostasCertas: 0, partSerie: false }
       );
       document.forms["insereNome"]["insNomeUsuario"].value = "";
       atualizarListaJogadores();
@@ -99,7 +100,14 @@ function iniciarJogo() {
   if (usuarios.length == 0) {
     // Adicionar um usuário padrão caso o usuário não inseriu nenhum jogador
     if (document.forms["insereNome"]["insNomeUsuario"].value == "") {
-      document.forms["insereNome"]["insNomeUsuario"].value = "Você";
+      //document.forms["insereNome"]["insNomeUsuario"].value = "Você";
+      document.forms["insereNome"]["insNomeUsuario"].value = "Márcia";
+      adicUsuario();
+      document.forms["insereNome"]["insNomeUsuario"].value = "Rhadassa";
+      adicUsuario();
+      document.forms["insereNome"]["insNomeUsuario"].value = "Rosilda";
+      adicUsuario();
+      document.forms["insereNome"]["insNomeUsuario"].value = "Rex";
     }
     adicUsuario();
   }
@@ -107,9 +115,38 @@ function iniciarJogo() {
   document.getElementsByClassName("perguntas")[0].style.display = "grid";
   prepararPerguntas();
   escoherPerguntas();
+  escolherUsuario();
 }
 
-function prepararPerguntas(){
+function escolherUsuario() {
+  // Escoher o participante para participar na rodada de perguntas
+  var veu1 = 0;
+  usuarios.forEach(userAtual => {
+    if (userAtual.partSerie == false) { veu1++; }
+  });
+  // * Inicio do trecho que redefine os parametros necessários para o inicio de uma nova série de perguntas
+  if (veu1 == 0) {
+    usuarios.forEach(userModf => {
+      userModf.partSerie = false;
+    });
+    rodada++;
+    veu1 = usuarios.length;
+  };
+  // * Fim do trecho que redefine os parametros necessários para o inicio de uma nova série de perguntas
+  var veu2 = obterInteiroAleatorio(1, veu1);
+  usuarios.forEach(userEscolhido => {
+    if (userEscolhido.partSerie == false && veu2 > 0) {
+      console.log(veu2);
+      if (veu2 == 1) {
+        document.getElementById("nomeJogador").innerText = userEscolhido.Nome;
+        userEscolhido.partSerie = true;
+      }
+      veu2--;
+    }
+  });
+}
+
+function prepararPerguntas() {
   // Preparar perguntas em uma array separada da array original
   perguntas = [];
   perguntasArrays.forEach(pergAtual => {
@@ -129,12 +166,12 @@ function escoherPerguntas() {
   document.getElementById("altResp3").setAttribute("resp", "0");
   document.getElementById("strPergunta").innerText = perguntas[vep2]["pergunta"];
   document.getElementById("txtAjudaPergunta").innerText = perguntas[vep2]["textoBase"];
-  while(vep3.length > 0){
+  while (vep3.length > 0) {
     var vep5 = obterInteiroAleatorio(0, (vep3.length - 1));
-    if(vep4 == 1){
+    if (vep4 == 1) {
       document.getElementById("altResp" + String(vep3[vep5])).setAttribute("resp", "1");
     }
-    document.getElementById("altResp" + String(vep3[vep5])).innerText = perguntas[vep2]["resposta"+String(vep4)];
+    document.getElementById("altResp" + String(vep3[vep5])).innerText = perguntas[vep2]["resposta" + String(vep4)];
     vep4++;
     vep3.splice(vep5, 1);
   }
