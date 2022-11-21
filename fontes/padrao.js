@@ -100,14 +100,7 @@ function iniciarJogo() {
   if (usuarios.length == 0) {
     // Adicionar um usuário padrão caso o usuário não inseriu nenhum jogador
     if (document.forms["insereNome"]["insNomeUsuario"].value == "") {
-      //document.forms["insereNome"]["insNomeUsuario"].value = "Você";
-      document.forms["insereNome"]["insNomeUsuario"].value = "Márcia";
-      adicUsuario();
-      document.forms["insereNome"]["insNomeUsuario"].value = "Rhadassa";
-      adicUsuario();
-      document.forms["insereNome"]["insNomeUsuario"].value = "Rosilda";
-      adicUsuario();
-      document.forms["insereNome"]["insNomeUsuario"].value = "Rex";
+      document.forms["insereNome"]["insNomeUsuario"].value = "Você";
     }
     adicUsuario();
   }
